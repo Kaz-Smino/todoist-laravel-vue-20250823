@@ -1,61 +1,143 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Task Manager Application - Laravel & Vue.js
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> Build a simple task manager application where users can create, read, update, and delete tasks. The frontend will be built with Vue.js, and the backend will be built with Laravel.
 
-## About Laravel
+## 🎯 Project Overview
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A full-stack task management application demonstrating modern web development practices with Laravel and Vue.js, featuring complete CRUD operations and a responsive user interface.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 📋 Requirements Specification
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Backend (Laravel)
 
-## Learning Laravel
+#### Setup
+- ✅ Laravel project with MySQL database
+- ✅ Environment configuration
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+#### Tasks API
+- [ ] Create a `Task` model with the following fields:
+  - `id` (primary key)
+  - `title` (string)
+  - `description` (text)
+  - `completed` (boolean)
+  - `created_at` and `updated_at` (timestamps)
+- [ ] Create a migration for the `tasks` table
+- [ ] Implement a controller with CRUD operations
+- [ ] Set up API routes for these CRUD operations:
+  - `GET /api/tasks` - List all tasks
+  - `POST /api/tasks` - Create a new task
+  - `GET /api/tasks/{id}` - Show a specific task
+  - `PUT /api/tasks/{id}` - Update a task
+  - `DELETE /api/tasks/{id}` - Delete a task
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Frontend (Vue.js)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#### Setup
+- [ ] Vue.js 3 project with Vite
+- [ ] Install Axios for making HTTP requests
 
-## Laravel Sponsors
+#### Components
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**TaskList.vue**: Display a list of tasks
+- [ ] Fetch tasks from the Laravel API and display them
+- [ ] Allow users to mark tasks as completed
 
-### Premium Partners
+**TaskForm.vue**: Form for creating and editing tasks
+- [ ] Allow users to enter a title and description
+- [ ] Include a checkbox for marking the task as completed
+- [ ] Submit the form to create or update tasks
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+**TaskItem.vue**: Display an individual task
+- [ ] Include buttons for editing and deleting the task
 
-## Contributing
+#### Routing
+- [ ] Set up Vue Router to navigate between the task list and the task form
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### Styling
+- [ ] Apply responsive styling to make the application presentable
 
-## Code of Conduct
+### Optional Features
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- [ ] State management with Vuex or Pinia
+- [ ] API Authentication system
 
-## Security Vulnerabilities
+## 🛠️ Technology Stack
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- **Backend**: Laravel 12 with PHP 8.2+
+- **Frontend**: Vue.js 3 with Vite
+- **Database**: MySQL
+- **HTTP Client**: Axios
+- **Development Environment**: Laravel Sail (Docker)
+- **Styling**: Tailwind CSS 4
 
-## License
+## 🚀 Getting Started
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Prerequisites
+- Docker Desktop
+- Node.js 18+
+
+### Installation & Setup
+
+1. **Clone the repository**:
+```bash
+git clone https://github.com/Kaz-Smino/todoist-laravel-vue-20250823.git
+cd todoist-laravel-vue-20250823
+```
+
+2. **Start the Docker environment**:
+```bash
+./vendor/bin/sail up -d
+```
+
+3. **Install dependencies**:
+```bash
+./vendor/bin/sail composer install
+./vendor/bin/sail npm install
+```
+
+4. **Setup environment and database**:
+```bash
+./vendor/bin/sail artisan migrate
+```
+
+5. **Build frontend assets**:
+```bash
+./vendor/bin/sail npm run dev
+```
+
+## 📁 Project Structure
+
+```
+├── app/
+│   ├── Http/Controllers/     # API Controllers
+│   └── Models/              # Eloquent Models
+├── database/
+│   └── migrations/          # Database Migrations
+├── resources/
+│   ├── js/                  # Vue.js Components
+│   └── css/                 # Styling
+├── routes/
+│   ├── api.php              # API Routes
+│   └── web.php              # Web Routes
+└── tests/                   # Application Tests
+```
+
+## 📊 Deliverables
+
+1. **Laravel API** with endpoints for CRUD operations on tasks
+2. **Vue.js application** with components for listing, creating, editing, and deleting tasks
+3. **Responsive styling** to make the application look presentable
+
+## 🎓 Learning Objectives
+
+This project demonstrates proficiency in:
+- Laravel backend API development
+- Vue.js component-based frontend development
+- RESTful API design and consumption
+- Database design and migrations
+- Modern JavaScript (ES6+)
+- Responsive web design
+
+## 📄 License
+
+Open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
