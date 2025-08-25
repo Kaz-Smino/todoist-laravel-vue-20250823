@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+// API routes are handled separately
+// All frontend routes should return the same view for Vue Router to handle
+Route::get('/{any}', function () {
     return view('app');
-});
+})->where('any', '.*');

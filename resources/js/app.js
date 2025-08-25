@@ -1,5 +1,8 @@
 import './bootstrap';
 import { createApp } from 'vue';
-import TaskApp from './components/TaskApp.vue';
+import router from './router';
+import App from './components/App.vue';
 
-createApp(TaskApp).mount('#app');
+const app = createApp(App);
+app.use(router);
+app.mount('#app');
